@@ -1,11 +1,11 @@
 import { useState } from 'react'
-
+import Dashboard from './pages/Dashboard'
 import './App.css'
 
 function App() {
 
   return (
-    <h2 >Hello</h2>
+    <Dashboard/>
   )
 }
 
