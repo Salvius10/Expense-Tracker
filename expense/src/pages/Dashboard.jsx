@@ -44,7 +44,30 @@ const Dashboard = () => {
                     <h1 className='text-2xl font-bold'>$5.5678</h1>
                     <p className='italic text-xs'>Latest: 2025-09-22</p>
                 </div>
-
+            </div>
+            <hr  className='text-gray-800 mt-3'/>
+            <div className='bg-black text-white m-6'>
+                <table className='table-auto border-collapse border border-white border-solid w-full text-left '>
+                    <thead>
+                        <tr>    
+                            <th className='border border-white border-solid px-2 py-2'>Title</th>
+                            <th className='border border-white border-solid px-2 py-2'>Date</th>
+                            <th className='border border-white border-solid px-2 py-2'>Status</th>
+                            <th className='border border-white border-solid px-2 py-2'>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td className='border border-solid px-2 py-2'>Food</td>
+                            <td className='border border-solid px-2 py-2'>29-04-2019</td>
+                            <td className='border border-solid px-2 py-2'>Paid</td>
+                            <td className='border border-solid px-2 py-2'>1500</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <button className='text-white bg-[#582688] border border-solid border-white px-6 py-2 mt-4 rounded '>+ADD</button>
+                </div>
             </div>
         </div>
     </div>
