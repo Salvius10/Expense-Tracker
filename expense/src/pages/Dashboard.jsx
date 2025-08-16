@@ -24,6 +24,7 @@ const Dashboard = () => {
                 <p className='mt-2 text-sm italic text-white'>Your personalized tracker</p>
             </div>
             <div className='mb-5 flex flex-col space-y-4'>
+                <button className='text-white bg-[#582688] border border-solid border-white p-2 rounded'>Home</button>
                 <button className='text-white bg-[#582688] border border-solid border-white p-2 rounded'>Income</button>
                 <button className='text-white bg-[#582688] border border-solid border-white p-2 rounded'>Expense</button>
                 <button className='text-white bg-[#582688] border border-solid border-white p-2 rounded'>Analysis</button>
