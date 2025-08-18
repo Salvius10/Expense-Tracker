@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-
-const Income = () => {
+const Income = ({onTotalChange}) => {
     const [income,setIncome]=useState([])
     const [formData,setFormData]=useState({source:"",amount:0,date:""})
     const [showForm,setShowForm]=useState(false)
@@ -13,7 +12,7 @@ const Income = () => {
     const handleDelete=(index)=>{
         setIncome(income.filter((ele,i)=>i!==index))
     }
-    
+    const total=income.reduce((acc,ele)=>acc+Number(ele.amount),0)
   return (
      <div className='flex bg-black h-screen' style={{ fontFamily: 'Inter, sans-serif' }}>
         <div className='w-64 text-[#555555]'>
@@ -32,7 +31,7 @@ const Income = () => {
                 <button className='text-white bg-[#582688] border border-solid border-white p-2 rounded w-full'>Profile</button>
             </div>
             </div>
-                
+
         </div>
         <div className='flex-1 bg-[#141414]'>
             <h1 className='text-white font-bold text-3xl pt-6 pl-6'>Income Accounts</h1><br />
@@ -40,7 +39,7 @@ const Income = () => {
             <div className='flex justify-center mt-4'>
                 <div className='bg-black border border-solid text-white max-w-s text-center p-6 px-30'>
                     <p className='text-l'>Income</p><br />
-                    <h1 className='text-3xl font-bold'>{income.reduce((acc,ele)=>acc+Number(ele.amount),0)}</h1>
+                    <h1 className='text-3xl font-bold'>${total}</h1>
                     <p className='italic text-xs'>Latest: 16-08-2025</p>
                 </div>
             </div>

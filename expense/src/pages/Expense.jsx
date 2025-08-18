@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Expense = () => {
+const Expense = ({onTotalChange}) => {
     const [expense,setExpense]=useState([])
     const [formData,setFormData]=useState({source:"",amount:0,date:""})
     const [showForm,setShowForm]=useState(false)
@@ -13,7 +13,12 @@ const Expense = () => {
     const handleDelete=(index)=>{
         setExpense(expense.filter((ele,i)=>i!==index))
     }
-    
+    const total=expense.reduce((acc,ele)=>acc+Number(ele.amount),0)
+    useEffect(()=>{
+        if (onTotalChange){
+            onTotalChange(total)
+        }
+    },[total,onTotalChange])
   return (
      <div className='flex bg-black h-screen' style={{ fontFamily: 'Inter, sans-serif' }}>
         <div className='w-64 text-[#555555]'>
@@ -40,7 +45,7 @@ const Expense = () => {
             <div className='flex justify-center mt-4'>
                 <div className='bg-black border border-solid text-white max-w-s text-center p-6 px-30'>
                     <p className='text-l'>Income</p><br />
-                    <h1 className='text-3xl font-bold'>{expense.reduce((acc,ele)=>acc+Number(ele.amount),0)}</h1>
+                    <h1 className='text-3xl font-bold'>${total}</h1>
                     <p className='italic text-xs'>Latest: 16-08-2025</p>
                 </div>
             </div>
